@@ -21,6 +21,8 @@ import android.view.View;
 import com.lzy.demo.R;
 import com.lzy.demo.base.BaseDetailActivity;
 import com.lzy.demo.callback.DialogCallback;
+import com.lzy.demo.callback.JsonCallback;
+import com.lzy.demo.model.AppUpdateBean;
 import com.lzy.demo.model.LzyResponse;
 import com.lzy.demo.model.ServerModel;
 import com.lzy.demo.utils.Urls;
@@ -62,19 +64,19 @@ public class JsonActivity extends BaseDetailActivity {
      */
     @OnClick(R.id.requestJson)
     public void requestJson(View view) {
-        OkGo.<LzyResponse<ServerModel>>get(Urls.URL_JSONOBJECT)//
+        OkGo.<LzyResponse<AppUpdateBean>>get("https://ag.chengyiapp.com/mobile/checkAppUpdate")//
                 .tag(this)//
-                .headers("header1", "headerValue1")//
-                .params("param1", "paramValue1")//
-                .execute(new DialogCallback<LzyResponse<ServerModel>>(this) {
+                .params("versionName", "2.4.6")//
+                .params("UserType", "1")//
+                .execute(new JsonCallback<LzyResponse<AppUpdateBean>>() {
 
                     @Override
-                    public void onSuccess(Response<LzyResponse<ServerModel>> response) {
+                    public void onSuccess(Response<LzyResponse<AppUpdateBean>> response) {
                         handleResponse(response);
                     }
 
                     @Override
-                    public void onError(Response<LzyResponse<ServerModel>> response) {
+                    public void onError(Response<LzyResponse<AppUpdateBean>> response) {
                         handleError(response);
                     }
                 });
