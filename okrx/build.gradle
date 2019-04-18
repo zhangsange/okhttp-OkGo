@@ -17,5 +17,3 @@ dependencies {
 //    compile "com.lzy.net:okgo:$versionName_okgo"
     compile project(':okgo')
 }
-
-//apply from: 'bintray.gradle'
