@@ -33,7 +33,8 @@ import com.lzy.demo.model.ItemModel;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.Bind;
+
+import butterknife.BindView;
 
 /**
  * ================================================
@@ -46,8 +47,8 @@ import butterknife.Bind;
  */
 public class CommonActivity extends BaseActivity {
 
-    @Bind(R.id.toolbar) Toolbar toolbar;
-    @Bind(R.id.recyclerView) RecyclerView recyclerView;
+    @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.recyclerView) RecyclerView recyclerView;
     private List<ItemModel> data;
 
     @Override

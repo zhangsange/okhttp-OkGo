@@ -48,7 +48,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
-import butterknife.Bind;
+
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
@@ -162,14 +163,14 @@ public class UploadAdapter extends RecyclerView.Adapter<UploadAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
-        @Bind(R.id.icon) ImageView icon;
-        @Bind(R.id.name) TextView name;
-        @Bind(R.id.priority) TextView priority;
-        @Bind(R.id.downloadSize) TextView downloadSize;
-        @Bind(R.id.tvProgress) TextView tvProgress;
-        @Bind(R.id.netSpeed) TextView netSpeed;
-        @Bind(R.id.pbProgress) NumberProgressBar pbProgress;
-        @Bind(R.id.upload) Button upload;
+        @BindView(R.id.icon) ImageView icon;
+        @BindView(R.id.name) TextView name;
+        @BindView(R.id.priority) TextView priority;
+        @BindView(R.id.downloadSize) TextView downloadSize;
+        @BindView(R.id.tvProgress) TextView tvProgress;
+        @BindView(R.id.netSpeed) TextView netSpeed;
+        @BindView(R.id.pbProgress) NumberProgressBar pbProgress;
+        @BindView(R.id.upload) Button upload;
         private UploadTask<?> task;
         private String tag;
 
